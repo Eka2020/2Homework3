@@ -1,7 +1,7 @@
 package com.company;
 
 public class BankAccount {
-    double amount;
+        private double amount;
 
     public double getAmount() {
         return amount;
@@ -17,8 +17,8 @@ public class BankAccount {
             throw new LimitException("Недостаточно средств ", amount);
         }
         amount = amount - sum;
-        System.out.println("Снимаем "+sum);
-        System.out.println("Остаток: "+amount);
+               System.out.println(getAmount());
+
     }
 
 }

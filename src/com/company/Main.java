@@ -13,7 +13,7 @@ public class Main {
                 System.out.println(e.getMessage());
                 System.out.println("Cнимаем остаток: " + account.getAmount());
                 System.out.print("Деньги на счете: ");
-                System.out.print(account.amount - (account.amount));
+                System.out.print(account.getAmount() - (account.getAmount()));
                 break;
             }
 
