@@ -1,31 +1,23 @@
 package com.company;
 
-
 import java.util.jar.JarOutputStream;
 
 public class Main {
-
     public static void main(String[] args) {
-
         BankAccount account = new BankAccount();
-
-        account.deposit(10000);
-        System.out.println("На счет положили "+ account.getAmount());
-
-                while (true) {
+        account.deposit(16000);
+        while (true) {
             try {
-                if (account.getAmount() >= 6000) {
-                    account.withDraw(6000);
-                    System.out.println("Остаток на счете составляет " +LimitException.getRemainingAmount());
-              } else {
-                   account.withDraw(4000);
-                    System.out.println("У Вас на счете остаток: "+LimitException.getRemainingAmount());
-                }
+                account.withDraw(6000);
             } catch (LimitException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
+                System.out.println("Cнимаем остаток: " + account.getAmount());
+                System.out.print("Деньги на счете: ");
+                System.out.print(account.amount - (account.amount));
                 break;
             }
+
         }
     }
-
 }
+

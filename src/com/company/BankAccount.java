@@ -1,26 +1,27 @@
 package com.company;
 
 public class BankAccount {
-    public static double amount;
+    double amount;
 
-    public double getAmount(){
+    public double getAmount() {
         return amount;
     }
     public void deposit(double sum) {
-     amount=amount+sum;
-    }
-
-    public  void withDraw(double sum) throws LimitException {
-        if (sum>getAmount()) {
-            throw new LimitException("Не достаточно средств для снятия этой суммы ",
-                    LimitException.getRemainingAmount());
+        if (sum > 0) {
+            amount = amount + sum;
+            System.out.println("Деньги на счете: " + amount);
         }
-            amount=amount-sum;
-        System.out.println("Снимаем "+sum);
     }
+    public void withDraw(double sum) throws LimitException {
+        if (sum > amount) {
+            throw new LimitException("Недостаточно средств ", amount);
+        }
+        amount = amount - sum;
+        System.out.println("Снимаем "+sum);
+        System.out.println("Остаток: "+amount);
+    }
+
 }
-
-
 
 
 
